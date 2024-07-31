@@ -1,0 +1,36 @@
+query MyBeautifulQuery {
+  tasks {
+    authorId
+    description
+    title
+    uuid
+    user {
+      name
+      uuid
+    }
+  }
+}
+
+mutation deleteTask ($taskId : uuid) {
+    delete_tasks(where: {uuid: {_eq: $taskId}}) {
+      returning {
+        title
+        authorId
+      }
+    }
+  }
+
+mutation deleteTask ($taskId : uuid) {
+    delete_tasks(where: {uuid: {_eq: $taskId}}) {
+      returning {
+        title
+        authorId
+      }
+    }
+  }
+
+ mutation insertTask($title: name!, $description: String!) {
+    insert_tasks(objects: {authorId: "c9587c38-9144-4143-8e4a-95726718d0dd", description: $description, title: $title}) {
+      returning {authorId,title}
+    }
+  }

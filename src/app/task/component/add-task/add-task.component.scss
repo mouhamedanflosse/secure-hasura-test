@@ -1,0 +1,22 @@
+:host {
+  display: block;
+}
+
+.card {
+  margin: 1rem;
+}
+
+.list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.form-field {
+  display: block;
+}
+.logout-button {
+  margin-bottom: 2rem;
+}
+.new-todo-card {
+  max-width: 20rem;
+}

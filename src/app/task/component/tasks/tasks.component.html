@@ -1,0 +1,17 @@
+<mat-card class="max-w-[300px]">
+  <mat-card-header>
+    <mat-card-subtitle>{{task.user.name}}</mat-card-subtitle>
+    <mat-card-title>{{task.title}}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <!-- <p>This card has divider and indeterminate progress as footer</p> -->
+    <p>{{task.description}}</p>
+    <mat-divider class="bg-red-500"></mat-divider>
+  </mat-card-content>
+  <mat-card-actions>
+    <div class="flex gap-3 w-fit">
+      <button class="btn" style="background-color: rgb(255, 55, 0);max-width: 20px;" mat-raised-button >Edit</button>
+      <button mat-raised-button (click)="deleteTask(task.uuid)" class="btn bg-blue-500" >Delete</button>
+    </div>
+  </mat-card-actions>
+</mat-card>

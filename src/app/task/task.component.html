@@ -1,0 +1,17 @@
+<div class="w-full flex justify-end pr-10">
+  <div class="flex gap-2 mt-4">
+    <button *ngIf="user" (click)="onLogout()"   class="mx-auto p-1 text-lg " mat-stroked-button>
+      logout
+    </button>
+    <button *ngIf="!user" (click)="onLogout()"   class="mx-auto p-1 text-lg " mat-stroked-button>
+      sign in
+    </button>
+    <app-auth></app-auth>
+  </div>
+</div>
+<main class="flex justify-center mt-7 gap-7 flex-wrap max-w-[80vw] mx-auto">
+  <app-tasks *ngFor="let task of tasks$ | async" [task]="task"></app-tasks>
+  <div class="w-full flex justify-center mt-6">
+    <app-add-task class="w-80"></app-add-task>
+  </div>
+</main>
