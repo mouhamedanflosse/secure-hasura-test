@@ -54,7 +54,9 @@ export class AddTaskComponent implements OnInit {
     onAuthStateChanged(this.auth, (user: User | null) => {
       if (user) {
         this.user = user
+        console.log(user)
         getIdToken(user).then((accessToken) => {
+          console.log(accessToken)
           console.log('Access Token:', accessToken);
           const decodedToken = jwtDecode(accessToken)
           console.log(jwtDecode(accessToken))
@@ -64,11 +66,11 @@ export class AddTaskComponent implements OnInit {
             "https://hasura.io/jwt/claims": {
               "x-hasura-default-role": "user",
               "x-hasura-allowed-roles": ["user"],
-              "x-hasura-user-id": decodedToken?.sub
+              "x-hasura-user-id": "c9587c38-9144-4143-8e4a-95726718d0dd"
             }
           };
 
-          const secret = 'side-secret';
+          const secret = '7d7232dd24abcfe16a36b064b3ac922c8262a1f48bc69566f93cb213cd27a3b0';
           const signedToken = jwtEncode(enrichedToken, secret);
           console.log(signedToken)
         }).catch((error) => {
